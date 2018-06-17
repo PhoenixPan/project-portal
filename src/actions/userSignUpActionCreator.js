@@ -21,7 +21,10 @@ export function userSignUp(user, callback) {
   const DUMMY_SIGNUP_URL = "http://localhost:3008/users";
   const userSignUpRequest = axios.post(DUMMY_SIGNUP_URL, user)
   .then(() => callback());
-  console.log(userSignUpRequest);
+
+  console.log("Action:");  
+  console.log(userSignUpRequest.value);
+
   return {
     type: USER_SIGNUP_SUCCESS,
     payload: userSignUpRequest

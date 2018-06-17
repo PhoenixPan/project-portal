@@ -21,8 +21,8 @@ ReactDOM.render(
         <Switch>
           <Route path="/design" component={Editor} />          
           <Route path="/login" component={UserLogin} />          
+          <Route path="/signup/success" component={UserSignUpSuccess} />                    
           <Route path="/signup" component={UserSignUp} />          
-          <Route path="/signup/success" component={UserSignUpSuccess} />          
           <Route path="/" component={UserHome} />
         </Switch>
     </BrowserRouter>    
