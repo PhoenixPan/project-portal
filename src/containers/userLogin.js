@@ -3,15 +3,15 @@ import { Field, reduxForm } from 'redux-form'
 
 class UserLogin extends Component { 
 
-  constructor(props) {
-    super(props);
-  }
   renderLoginField({input, label, type, meta: { touched, error }}) {
+
+    const inputClassName = `${ touched && error ? "input-error" : ""}`;
+
     return(
       <div>
         <label>{label}</label><br/>
-        <input {...input} type={type}/>
-        {touched && (error && <span>{error}</span>)}
+        <input className={inputClassName} {...input} type={type}/>
+        {touched && (error && <span className="text-danger">{error}</span>)}
       </div>
     );
   }
@@ -43,8 +43,8 @@ function validate(values) {
   }
   if (!values.password) {
     errors.password = 'Required'
-    return errors
   }
+  return errors
 }
 
 export default reduxForm({ 

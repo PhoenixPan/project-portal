@@ -33,17 +33,18 @@ class UserHome extends Component {
       <div>
         <div className="user-designs-container">{designs}</div>
         <Link className="btn btn-primary" to="/design">Add a new design</Link>
+        <Link className="btn btn-primary" to="/signup">Sign up</Link>
       </div>
     )
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getAllUserDesigns }, dispatch);
-}
-
 function mapStateToProps( {allUserDesigns} ) {
   return { allUserDesigns };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getAllUserDesigns }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserHome);
