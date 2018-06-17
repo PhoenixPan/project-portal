@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import { Field, reduxForm } from 'redux-form'
 
-import UserDesign from '../components/userDesign';
+// import UserDesign from '../components/userDesign';
 
 
 export default class Editor extends Component {
   
+
     render() { 
       return (
         <div>
           <h1>Editor</h1>
-          <label htmlFor="user-design-title">Title: </label>
-          <input id="user-design-title" type="text"/>
-          <label htmlFor="user-design-body">Body:</label>
-          <textarea id="user-design-body" type="text"/>
+          <div>
+            <label htmlFor="user-design-title">Title: </label><br/>
+            <input id="user-design-title" type="text"/>
+          </div>
+          <div>
+            <label htmlFor="user-design-body">Body:</label><br/>
+            <textarea id="user-design-body" type="text"/>
+          </div>
         </div>
       )
     }
