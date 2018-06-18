@@ -20,15 +20,23 @@ class UserSignUp extends Component {
     );
   }
 
-  onSignUp(values) {
-    console.log("signup start");
-    this.props.userSignUp(values);
-    console.log("signup over");
-    // this.props.history.push("/signup/success");
+  onSignUp(formValues) {
+    // console.log("Sign up:");
+    // console.log(formValues);
+    this.props.userSignUp(formValues);
   }
   
   render() {
     const { handleSubmit } = this.props;
+
+    console.log("Render:");
+    if (this.props.userSignUpResult && this.props.userSignUpResult.status === "pending") {
+      return( <div><h1>Loading...</h1></div> )
+    }
+
+    if (this.props.userSignUpResult && this.props.userSignUpResult.status === "success") {
+      this.props.history.push("/signup/success");
+    }
 
     return (
       <div>
@@ -44,14 +52,14 @@ class UserSignUp extends Component {
   }
 }
 
-function validate(values) {
+function validate(formValues) {
   const errors = {}
-  if (!values.email) {
+  if (!formValues.email) {
     errors.email = 'Required'
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formValues.email)) {
     errors.email = 'Invalid email address'
   }
-  if (!values.password) {
+  if (!formValues.password) {
     errors.password = 'Required'
   }
   return errors
