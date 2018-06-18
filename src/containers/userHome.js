@@ -17,7 +17,7 @@ class UserHome extends Component {
 
   render() { 
     var allDesigns = this.props.allUserDesigns;
-    console.log(allDesigns); 
+    // console.log(allDesigns); 
     
     if (!allDesigns || allDesigns.length < 1) {
       return <h1>Loading...</h1>

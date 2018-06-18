@@ -1,4 +1,4 @@
-import { GET_ALL_USER_DESIGNS } from '../actions/getAllUserDesignsActionCreator'
+import { GET_ALL_USER_DESIGNS } from '../constants/actionTypes'
 
 export default function(state = null, action) {
   switch(action.type) {

@@ -1,4 +1,4 @@
-import { USER_SIGNUP_SUCCESS } from '../actions/userSignUpActionCreator'
+import { USER_SIGNUP_SUCCESS } from '../constants/actionTypes'
 
 export default function(state = null, action) {
   switch(action.type) {

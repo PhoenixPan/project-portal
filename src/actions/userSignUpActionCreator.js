@@ -1,7 +1,5 @@
 import axios from 'axios'
-
-export const USER_SIGNUP_SUCCESS = "USER_SIGNUP_SUCCESS"
-export const USER_SIGNUP_FAILED = "USER_SIGNUP_FAILED"
+import { USER_SIGNUP_SUCCESS, USER_SIGNUP_FAILED } from '../constants/actionTypes';
 
 export const userSignUpSuccess = data => (
   {

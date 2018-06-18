@@ -1,22 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import ReduxPromise from 'redux-promise';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import store from './store/store';
 import UserHome from './containers/userHome';
 import Editor from './containers/editor';
 import UserLogin from './containers/userLogin';
 import UserSignUp from './containers/userSignUp';
 import UserSignUpSuccess from './containers/userSignUpSuccess';
-import reducers from './reducers';
-
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <BrowserRouter>
         <Switch>
           <Route path="/design" component={Editor} />          
