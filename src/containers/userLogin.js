@@ -17,7 +17,7 @@ class UserLogin extends Component {
   }
 
   onLogin(values) {
-    console.log(values);
+    //console.log(values);
   }
   
   render() {

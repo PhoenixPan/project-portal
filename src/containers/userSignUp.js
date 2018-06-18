@@ -21,23 +21,12 @@ class UserSignUp extends Component {
   }
 
   onSignUp(values) {
-    this.props.userSignUp(values, () => {
-      this.props.history.push("/signup/success");
-    });
-    //   result => {
-    //   console.log(result);
-    //   if (this.props.userSignUpResult.status === 201) {
-    //     this.props.history.push("/");
-    //   } else {
-    //     console.log("Error");
-    //   }
-    // }
 
-    // console.log("Container:");
-    // console.log(this.props.userSignUpResult);
-    // if (this.props.userSignUpResult && this.props.userSignUpResult.status === 201) {
-    //   this.props.history.push("/")
-    // }
+    console.log("signup start");
+    this.props.userSignUp(values);
+    console.log("signup over");
+
+    // this.props.history.push("/signup/success");
   }
   
   render() {
