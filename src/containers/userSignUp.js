@@ -21,11 +21,9 @@ class UserSignUp extends Component {
   }
 
   onSignUp(values) {
-
     console.log("signup start");
     this.props.userSignUp(values);
     console.log("signup over");
-
     // this.props.history.push("/signup/success");
   }
   

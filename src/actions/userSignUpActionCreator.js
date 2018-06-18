@@ -1,30 +1,36 @@
 import axios from 'axios'
-import { USER_SIGNUP_SUCCESS, USER_SIGNUP_FAILED } from '../constants/actionTypes';
+import { USER_SIGNUP } from '../constants/actionTypes';
+import store from '../store/store';
 
-export const userSignUpSuccess = data => (
+export const userSignUpData = (data, status) => (
   {
-    type: USER_SIGNUP_SUCCESS,
-    payload: data 
-  }
-)
-
-export const userSignUpFail = data => (
-  {
-    type: USER_SIGNUP_FAILED,
-    payload: data 
+    type: USER_SIGNUP,
+    payload: data,
+    state: status
   }
 )
 
 export function userSignUp(user) {
   const DUMMY_SIGNUP_URL = "http://localhost:3008/users";
 
-  // axios.post(DUMMY_SIGNUP_URL, user)
-  // .then(res => {
-  //   // handleResult();
-  //   console.log(res.data);
-  //   console.log(userSignUpSuccess(res.data));
-  //   return userSignUpSuccess(res.data);
-  // });
+  // return dispatch => {
+  //   return axios.post(DUMMY_SIGNUP_URL, user)
+  //   .then(res => {
+  //     console.log("AC: ");
+  //     console.log(typeof(userSignUpSuccess(res)));
+  //     dispatch(userSignUpSuccess(res));
+  //   })
+  //   .catch(error => {
+  //     dispatch(userSignUpFail(error));
+  //   });
+  // }
+  // store.dispatch(userSignUpData(user, "pending"));
+
+  return axios.post(DUMMY_SIGNUP_URL, user)
+  .then(res => { setTimeout(() => {
+    store.dispatch(userSignUpData(res, "success"));
+  }, 2000); 
+  });
 
 
   // const userSignUpRequest = axios.post(DUMMY_SIGNUP_URL, user)
@@ -37,15 +43,4 @@ export function userSignUp(user) {
   //   type: USER_SIGNUP_SUCCESS,
   //   payload: userSignUpRequest
   // };
-
-  return dispatch => {
-    return axios.post(DUMMY_SIGNUP_URL, user)
-    .then(res => {
-      console.log(typeof(userSignUpSuccess(res)));
-      dispatch(userSignUpSuccess(res));
-    })
-    .catch(error => {
-      dispatch(userSignUpFail(error));
-    });
-  }
 }

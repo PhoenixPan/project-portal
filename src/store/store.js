@@ -4,5 +4,5 @@ import ReduxPromise from 'redux-promise';
 import reducers from '../reducers/index';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
-export default createStoreWithMiddleware(reducers);
+const store = createStoreWithMiddleware(reducers);
+export default store;
