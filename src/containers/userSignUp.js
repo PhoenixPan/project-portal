@@ -23,7 +23,9 @@ class UserSignUp extends Component {
   onSignUp(formValues) {
     // console.log("Sign up:");
     // console.log(formValues);
-    this.props.userSignUp(formValues);
+    this.props.userSignUp(formValues, () => {
+      this.props.history.push("/signup/success");
+    });
   }
   
   render() {
@@ -32,10 +34,6 @@ class UserSignUp extends Component {
     console.log("Render:");
     if (this.props.userSignUpResult && this.props.userSignUpResult.status === "pending") {
       return( <div><h1>Loading...</h1></div> )
-    }
-
-    if (this.props.userSignUpResult && this.props.userSignUpResult.status === "success") {
-      this.props.history.push("/signup/success");
     }
 
     return (
