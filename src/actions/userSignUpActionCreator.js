@@ -13,17 +13,22 @@ export const userSignUpData = (data, status) => (
 export function userSignUp(user, redirect) {
   const DUMMY_SIGNUP_URL = "http://localhost:3008/users";
 
-
   return dispatch => {
     console.log("Dispatch:");
 
     dispatch(userSignUpData(user, "pending"));
 
-    return axios.post(DUMMY_SIGNUP_URL, user)
-    .then(res => { setTimeout(() => {
-      dispatch(userSignUpData(res, "success"));
-      redirect();
-    }, 2000); 
-    });
+    const request = axios.post(DUMMY_SIGNUP_URL, user);
+    return request.then(
+      res => { 
+        dispatch(userSignUpData(res, "success"));
+        redirect();
+      });
+    // return request.then(res => { setTimeout(() => 
+    //   {
+    //     dispatch(userSignUpData(res, "success"));
+    //     redirect();
+    //   }, 2000); 
+    // });
   }
 }
