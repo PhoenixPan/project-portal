@@ -4,6 +4,6 @@ import thunk from 'redux-thunk';
 
 import reducers from '../reducers/index';
 
-const store = createStore(reducers, applyMiddleware(ReduxPromise));
+const store = createStore(reducers, applyMiddleware(ReduxPromise, thunk));
 
 export default store;
