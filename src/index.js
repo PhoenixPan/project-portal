@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import store from './store/store';
-import UserHome from './containers/userHome';
+import UserHomeContainer from './containers/userHomeContainer';
 import Editor from './containers/editor';
 import UserLogin from './containers/userLogin';
 import UserSignUp from './containers/userSignUp';
@@ -18,7 +18,7 @@ ReactDOM.render(
           <Route path="/login" component={UserLogin} />          
           <Route path="/signup/success" component={UserSignUpSuccess} />                    
           <Route path="/signup" component={UserSignUp} />          
-          <Route path="/" component={UserHome} />
+          <Route path="/" component={UserHomeContainer} />
         </Switch>
     </BrowserRouter>    
   </Provider>

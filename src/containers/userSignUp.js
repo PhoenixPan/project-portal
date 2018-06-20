@@ -21,8 +21,6 @@ class UserSignUp extends Component {
   }
 
   onSignUp(formValues) {
-    // console.log("Sign up:");
-    // console.log(formValues);
     this.props.userSignUp(formValues, () => {
       this.props.history.push("/signup/success");
     });

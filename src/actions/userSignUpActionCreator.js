@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { USER_SIGNUP } from '../constants/actionTypes';
-import store from '../store/store';
 
 export const userSignUpData = (data, status) => (
   {
