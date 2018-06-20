@@ -8,7 +8,7 @@ import UserHomeContainer from './containers/userHomeContainer';
 import Editor from './containers/editor';
 import UserLogin from './containers/userLogin';
 import UserSignUp from './containers/userSignUp';
-import UserSignUpSuccess from './containers/userSignUpSuccess';
+import UserSignUpSuccess from './components/userSignUpSuccess';
 
 ReactDOM.render(
   <Provider store={store}>
