@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import store from './store/store';
 import UserHomeContainer from './containers/userHomeContainer';
@@ -19,6 +19,7 @@ ReactDOM.render(
           <Route path="/signup/success" component={UserSignUpSuccess} />                    
           <Route path="/signup" component={UserSignUp} />          
           <Route path="/" component={UserHomeContainer} />
+          <Redirect to="/" />
         </Switch>
     </BrowserRouter>    
   </Provider>

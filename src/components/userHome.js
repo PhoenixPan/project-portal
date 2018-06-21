@@ -29,6 +29,7 @@ export default class UserHome extends Component {
         <div className="user-designs-container">{designs}</div>
         <Link className="btn btn-primary" to="/design">Add a new design</Link>
         <Link className="btn btn-primary" to="/signup">Sign up</Link>
+        <Link className="btn btn-primary" to="/login">Login</Link>
       </div>
     )
   }
