@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { loginUser } from "../actions/userLoginActionCreator";
 
 class UserLogin extends Component { 
 
@@ -16,20 +20,26 @@ class UserLogin extends Component {
     );
   }
 
-  onLogin(values) {
-    //console.log(values);
+  onLogin(formValues) {
+    console.log("Login");
+    this.props.loginUser(formValues, () => {
+      this.props.history.push("/");
+    });
   }
   
   render() {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.onLogin.bind(this))}> 
-        <h1>Login</h1>
-        <Field label="Email:" name="email" component={this.renderLoginField} type="text" />
-        <Field label="Password:" name="password" component={this.renderLoginField} type="password" />
-        <button type="submit">Login</button>
-      </form>
+      <div>      
+        <form onSubmit={handleSubmit(this.onLogin.bind(this))}> 
+          <h1>Login</h1>
+          <Field label="Email:" name="email" component={this.renderLoginField} type="text" />
+          <Field label="Password:" name="password" component={this.renderLoginField} type="password" />
+          <button type="submit">Login</button>
+        </form>
+        <Link className="btn btn-primary" to="/">Back to home page</Link>  
+      </div>
     );
   }
 }
@@ -47,7 +57,17 @@ function validate(values) {
   return errors
 }
 
+function mapStateToProps( { userLoginResult } ) {
+  return { userLoginResult };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ loginUser }, dispatch);
+}
+
 export default reduxForm({ 
   validate: validate,
   form: 'UserLoginForm' 
-})(UserLogin);
+})(
+  connect(mapStateToProps, mapDispatchToProps)(UserLogin)
+);

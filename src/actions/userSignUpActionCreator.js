@@ -23,6 +23,7 @@ export function userSignUp(user, redirect) {
         dispatch(userSignUpData(res, "success"));
         redirect();
       });
+      
     
     // return request.then(res => { setTimeout(() => 
     //   {

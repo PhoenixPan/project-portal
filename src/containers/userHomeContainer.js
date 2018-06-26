@@ -13,6 +13,11 @@ class UserHomeContainer extends Component {
   }
 
   render() { 
+
+    if (!this.props.userLoginResult || this.props.userLoginResult.result !== "success")
+      return <h1>Please login first</h1>
+      // return <UserLogin />
+
     return (
       <UserHome allUserDesigns={this.props.allUserDesigns}/>
     )
@@ -23,8 +28,8 @@ UserHomeContainer.propTypes = {
   allUserDesigns: PropTypes.object
 }
 
-function mapStateToProps( {allUserDesigns} ) {
-  return { allUserDesigns };
+function mapStateToProps( {allUserDesigns, userLoginResult} ) {
+  return { allUserDesigns, userLoginResult };
 }
 
 function mapDispatchToProps(dispatch) {

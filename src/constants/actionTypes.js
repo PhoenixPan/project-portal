@@ -1,2 +1,3 @@
 export const GET_ALL_USER_DESIGNS = "GET_ALL_USER_DESIGNS"
 export const USER_SIGNUP = "USER_SIGNUP"
+export const USER_LOGIN = "USER_LOGIN"

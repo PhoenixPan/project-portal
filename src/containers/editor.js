@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 // import { Field, reduxForm } from 'redux-form'
@@ -20,6 +21,7 @@ export default class Editor extends Component {
             <label htmlFor="user-design-body">Body:</label><br/>
             <textarea id="user-design-body" type="text"/>
           </div>
+          <Link className="btn btn-primary" to="/">Back to home page</Link>  
         </div>
       )
     }

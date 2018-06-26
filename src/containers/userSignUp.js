@@ -31,7 +31,7 @@ class UserSignUp extends Component {
 
     console.log("Render:");
     if (this.props.userSignUpResult && this.props.userSignUpResult.status === "pending") {
-      return( <div><h1>Loading...</h1></div> )
+      return( <div><h1>Signing you up...</h1></div> )
     }
 
     return (

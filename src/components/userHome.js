@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import UserDesign from '../components/userDesign';
 import './userHome.css';
@@ -27,9 +26,6 @@ export default class UserHome extends Component {
     return (
       <div>
         <div className="user-designs-container">{designs}</div>
-        <Link className="btn btn-primary" to="/design">Add a new design</Link>
-        <Link className="btn btn-primary" to="/signup">Sign up</Link>
-        <Link className="btn btn-primary" to="/login">Login</Link>
       </div>
     )
   }
