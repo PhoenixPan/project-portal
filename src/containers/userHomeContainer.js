@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 
 import UserHome from '../components/userHome';
 import { getAllUserDesigns } from "../actions/getAllUserDesignsActionCreator";
+import { fakeAuth } from "../components/fakeAuth";
 
 class UserHomeContainer extends Component {
 
@@ -14,7 +15,7 @@ class UserHomeContainer extends Component {
 
   render() { 
 
-    if (!this.props.userLoginResult || this.props.userLoginResult.result !== "success")
+    if (!fakeAuth.isAuthenticated)
       return <h1>Please login first</h1>
       // return <UserLogin />
 

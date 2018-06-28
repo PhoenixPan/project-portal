@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { loginUser } from "../actions/userLoginActionCreator";
+import { fakeAuth } from "../components/fakeAuth";
 
 class UserLogin extends Component { 
+
+  state = {
+    redirectToReferrer: false
+  }
+
+  onLogin(formValues) {
+    fakeAuth.authenticate(() => {
+      this.setState({ redirectToReferrer: true });
+    });
+    // this.props.history.push("/");
+    // this.props.loginUser(formValues, () => {
+    //   this.props.history.push("/");
+    // });
+  }
 
   renderLoginField({input, label, type, meta: { touched, error }}) {
 
@@ -20,14 +35,13 @@ class UserLogin extends Component {
     );
   }
 
-  onLogin(formValues) {
-    console.log("Login");
-    this.props.loginUser(formValues, () => {
-      this.props.history.push("/");
-    });
-  }
-  
   render() {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer)
+      return <Redirect to={from} />
+
     const { handleSubmit } = this.props;
 
     return (
