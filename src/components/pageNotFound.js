@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import "./pageNotFound.css";
 
 export default class PageNotFound extends Component {
   render() {
     return (
-      <h1>Oops...Page not found</h1>
+      <div className="page-not-found-container">
+        <img src="/old-tv.png" alt=""/>
+        <p className="page-not-found-text">Oops...Page not found</p>
+      </div>
     )
   }
 }
