@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form'
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { loginUser } from "../actions/userLoginActionCreator";
-import { fakeAuth } from "../components/fakeAuth";
+import { fakeAuth } from "../constants/fakeAuth";
+
+import "./userLogin.css";
 
 class UserLogin extends Component { 
 
@@ -24,7 +26,7 @@ class UserLogin extends Component {
 
   renderLoginField({input, label, type, meta: { touched, error }}) {
 
-    const inputClassName = `${ touched && error ? "input-error" : ""}`;
+    const inputClassName = `${ touched && error ? "input-error form-control" : "form-control"}`;
 
     return(
       <div>
@@ -45,14 +47,14 @@ class UserLogin extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <div>      
+      <div className="login-container">      
+        <span className="login-logo"></span>
         <form onSubmit={handleSubmit(this.onLogin.bind(this))}> 
-          <h1>Login</h1>
+          <h1 className="login-header">Login</h1>
           <Field label="Email:" name="email" component={this.renderLoginField} type="text" />
           <Field label="Password:" name="password" component={this.renderLoginField} type="password" />
-          <button type="submit">Login</button>
+          <button className="btn login-submit" type="submit">Login</button>
         </form>
-        <Link className="btn btn-primary" to="/">Back to home page</Link>  
       </div>
     );
   }

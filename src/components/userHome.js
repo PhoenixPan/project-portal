@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import UserDesign from '../components/userDesign';
+import UserDesignCard from '../components/userDesignCard';
 import './userHome.css';
 
 
@@ -20,7 +20,7 @@ export default class UserHome extends Component {
     var designs = [];
     for (const id of Object.keys(allUserDesigns)) {
       if (id < 10)
-        designs.push(<UserDesign key={id} designInfo={allUserDesigns[id]}/>);
+        designs.push(<UserDesignCard key={id} designInfo={allUserDesigns[id]}/>);
     }
 
     return (

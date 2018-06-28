@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class UserDesign extends Component {
+export default class UserDesignCard extends Component {
   render() {
     return (
       <div className="user-design">

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { bindActionCreators } from 'redux';
 // import { Field, reduxForm } from 'redux-form'
 
-// import UserDesign from '../components/userDesign';
+// import UserDesign from '../components/userDesignCard';
 
 
 export default class Editor extends Component {
