@@ -49,7 +49,7 @@ ReactDOM.render(
 
   <Provider store={store}>
     <BrowserRouter>
-      <div>
+      <div className="router-container">
         <Navbar />
         <AuthButton />
         <Switch>

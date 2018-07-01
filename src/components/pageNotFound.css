@@ -1,6 +1,25 @@
-.page-not-found-container {
-  height: 100px;
-  width: 100px;
+/* .page-not-found-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+} */
+
+.tv-container {
+  position: relative;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 614px;
+  height: 427px;
+  /* margin:0 auto; */
+}
+
+.noise-layer {
+  position: absolute;
+  top: 40px;  
+  left: 35px;
+  height: 300px;
+  width: 430px;
   overflow:hidden;
   margin:0px;
   background: rgb(31, 31, 31);
@@ -8,6 +27,31 @@
   background-image:url('http://darkhorsegames.net/wp-content/uploads/2014/03/NoiseMap.gif');
   background-repeat:repeat;
   animation:noise 48ms linear infinite;
+}
+
+.tv-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.page-not-found-title, .page-not-found-text {
+  position: absolute;
+  width: 250px;
+  color: #fff;
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-size: 2em;
+}
+
+.page-not-found-title {
+  top: 100px;
+  left: 120px;
+  font-size: 3.5em;
+}
+
+.page-not-found-text {
+  top: 200px;
+  left: 120px;
 }
 
 @keyframes noise{
