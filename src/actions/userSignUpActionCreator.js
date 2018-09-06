@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { USER_SIGNUP } from '../constants/actionTypes';
+import { DUMMY_SIGNUP_URL } from '../constants/config';
 
 export const userSignUpData = (data, status) => (
   {
@@ -10,10 +11,8 @@ export const userSignUpData = (data, status) => (
 )
 
 export function userSignUp(user, redirect) {
-  const DUMMY_SIGNUP_URL = "http://localhost:3008/users";
 
   return dispatch => {
-    console.log("Dispatch:");
 
     dispatch(userSignUpData(user, "pending"));
 
