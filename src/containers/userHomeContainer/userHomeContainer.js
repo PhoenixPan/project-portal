@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-import UserHome from '../components/userHome';
-import { getAllUserDesigns } from "../actions/getAllUserDesignsActionCreator";
-import { fakeAuth } from "../constants/fakeAuth";
+import UserHome from '../../components/userHome/userHome';
+import { getAllUserDesigns } from "../../actions/getAllUserDesignsActionCreator";
+import { fakeAuth } from "../../constants/fakeAuth";
 
 class UserHomeContainer extends Component {
 

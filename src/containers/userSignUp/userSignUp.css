@@ -1,0 +1,10 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100%;
+  background: url("https://images.unsplash.com/photo-1505279340786-1e3b097e227a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9e6fe146a61fd7ae800ab793bc4ae477&auto=format&fit=crop&w=1267&q=80") no-repeat 70% center;
+  background-size: cover;
+}

@@ -1,0 +1,57 @@
+.login-container {
+  width: 300px;
+  background: #FFF;
+  padding: 0 30px 30px 30px;
+  margin: 60px auto;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.16), 0px 3px 6px 1px rgba(0, 0, 0, 0.12);
+}
+
+.login-logo {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: -40px;
+  height: 80px;
+  width: 80px;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/twitter-32.png') center center no-repeat, #00c4cc;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.login-header {
+  font-size: 24px;
+  font-weight: 100;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-input {
+  width: 100%;
+  background: #bdc3c7;
+  border: none;
+  height: 30px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.login-submit {
+  width: 100%;
+  border: none;
+  background: #99c432;
+  color: #ffffff;
+  margin: 30px auto;
+  border-radius: 5px;
+  transition: all ease-in-out .2s;
+}
+
+.login-input:focus, .login-submit:focus {
+  outline: none;
+}
+
+.login-submit:hover {
+  background: #83a82b;
+}

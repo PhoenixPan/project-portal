@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import UserDesignCard from '../components/userDesignCard';
+import UserDesignCard from '../userDesignCard/userDesignCard';
 import './userHome.css';
 
 
