@@ -22,3 +22,6 @@ yarn-error.log*
 
 // credential file
 credentials.json
+
+// css
+*.css
