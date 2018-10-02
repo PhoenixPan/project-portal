@@ -1,0 +1,80 @@
+// Models
+@mixin border-radius($values) {
+    -webkit-border-radius: $values;
+    -moz-border-radius: $values;
+    -ms-border-radius: $values;
+    -o-border-radius: $values;
+    border-radius: $values;
+}
+
+@mixin animation($values) {
+    -webkit-animation: $values;
+    -moz-animation: $values;
+    -ms-border-radius: $values;
+    -o-animation: $values;
+    animation: $values;
+}
+
+@mixin transition($property, $duration, $timing) {
+    -webkit-transition: $duration $property, $timing;
+    -moz-transition: $duration $property, $timing;
+    -o-transition: $duration $property, $timing;
+    transition: $duration $property, $timing;
+}
+
+// sass-lint:disable no-duplicate-properties
+@mixin flex {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+}
+// sass-lint:enable no-duplicate-properties
+
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin center-x {
+    @include flex();
+
+    justify-content: center;
+}
+
+@mixin box-model($text-color, $background-color) {
+    @include text-font-family();
+    @include border-radius(3px);
+
+    color: $text-color;
+    background-color: $background-color;
+}
+
+// Components
+@mixin box-shadow-purple() {
+    box-shadow: 0px 10px 20px rgba(154, 82, 170, 0.18);
+}
+
+@mixin box-shadow-black-small() {
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05), 0px 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+@mixin box-shadow-black-medium() {
+    box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.05), 0px 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+@mixin box-shadow-black-large() {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+@mixin card-white() {
+    @include box-model($dark, $white);
+    @include box-shadow-black-small();
+}
+
+@mixin card-purple() {
+    @include box-model($white, $dark);
+    @include box-shadow-purple();
+}

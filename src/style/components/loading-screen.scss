@@ -1,0 +1,31 @@
+.loading-screen-canvas {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999999;
+    opacity: 50%;
+
+    .loading-theme {
+        @include flex;
+
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: $orange;
+        background-color: $white;
+    }
+}
+
+@keyframes flickerAnimation {
+    0%   {opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.animate-flicker {
+    -webkit-animation: flickerAnimation 2.5s infinite;
+    -moz-animation: flickerAnimation 2.5s infinite;
+    -o-animation: flickerAnimation 2.5s infinite;
+    animation: flickerAnimation 2.5s infinite;
+}

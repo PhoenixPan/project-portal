@@ -1,0 +1,52 @@
+// Font family
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:700,800';
+
+// Font size
+$font-size-large:                               18px !default;
+$font-size-base:                                17px !default;
+$font-size-small:                               16px !default;
+$font-size-smaller:                             15px !default;
+$font-size-h1:                                  36px !default;
+$font-size-h2:                                  30px !default;
+$font-size-h3:                                  28px !default;
+$font-size-h4:                                  22px !default;
+$font-size-h5:                                  18px !default;
+
+$font-size-map: (
+    large: $font-size-large,
+    base: $font-size-base,
+    small: $font-size-small,
+    smaller: $font-size-smaller,
+    h1: $font-size-h1,
+    h2: $font-size-h2,
+    h3: $font-size-h3,
+    h4: $font-size-h4,
+    h5: $font-size-h5
+);
+
+// Font weight
+$font-weight-regular:                           400;
+$font-weight-bold:                              700;
+$font-weight-extra-bold:                        800;
+$font-weight-black:                             900;
+
+// Line height
+$base-line-height:                              26px;
+$small-line-height:                             22px;
+
+// Font family
+$title-font-family:                             'Montserrat', Arial, Helvetica, sans-serif;
+$text-font-family:                              'Lato', Arial, Helvetica, sans-serif;
+
+// Mixins
+@mixin title($size) {
+    font-size: map-get($font-size-map, $size);
+    font-family: $title-font-family;
+    color: $orange;
+}
+
+@mixin font-description() {
+    line-height: $base-line-height;
+    font-size: $font-size-base;
+    font-family: $text-font-family;
+}

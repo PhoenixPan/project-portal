@@ -13,7 +13,7 @@ import UserSignUpSuccess from './components/userSignUpSuccess/userSignUpSuccess'
 import PageNotFound from './components/pageNotFound/pageNotFound';
 import { fakeAuth } from './constants/fakeAuth';
 
-import "./index.css";
+import './style/index.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route

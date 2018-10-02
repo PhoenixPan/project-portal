@@ -1,0 +1,54 @@
+.page-title {
+    @include title(h4);
+
+    margin-bottom: 16px;
+    color: $orange;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.page-subtitle {
+    @include title(h5);
+
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    color: $orange;
+    letter-spacing: -1px;
+    margin: 24px 0 16px 0;
+}
+
+.page-text {
+    color: $dark;
+    font-size: $font-size-base;
+    font-family: $text-font-family;
+    margin: 16px 0px 24px 0px;
+}
+
+.page-description {
+    color: $dark;
+    font-size: $font-size-base;
+    font-family: $text-font-family;
+    text-align: center;
+}
+
+@media screen and (min-width: $screen-xs) {
+    .page-title {
+        @include title(h3);
+    }
+
+    .page-subtitle {
+        @include title(h4);
+    }
+}
+
+@media screen and (min-width: $screen-sm) {
+    .page-title {
+        @include title(h1);
+    }
+
+    .page-description {
+        font-size: $font-size-large;
+        text-align: left;
+    }
+}
