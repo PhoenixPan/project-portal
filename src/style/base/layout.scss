@@ -13,12 +13,19 @@ $body-margin: 16px;
 // Page layout
 html, body {
     background-color: $white;
-    height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
     font-family: $text-font-family;
     font-size: $font-size-base;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 120px;
 }
 
 ul {

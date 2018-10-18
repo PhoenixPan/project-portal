@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 import UserDesignCard from '../userDesignCard/userDesignCard';
-import './userHome.css';
-
 
 export default class UserHome extends Component {
 

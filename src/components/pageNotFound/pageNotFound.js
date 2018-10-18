@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./pageNotFound.css";
 import tv from "./old-tv.png";
 
 export default class PageNotFound extends Component {

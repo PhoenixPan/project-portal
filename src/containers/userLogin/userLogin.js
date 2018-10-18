@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 import { loginUser } from "../../actions/userLoginActionCreator";
 import { fakeAuth } from "../../constants/fakeAuth";
 
-import "./userLogin.css";
-
 class UserLogin extends Component { 
 
   state = {
