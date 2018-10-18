@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import store from './store/store';
-import UserHomeContainer from './containers/userHomeContainer/userHomeContainer';
-import Editor from './containers/editor/editor';
-import UserLogin from './containers/userLogin/userLogin';
-import UserSignUp from './containers/userSignUp/userSignUp';
-import Navbar from './containers/navbar/navbar';
+import UserHomeContainer from './components/userHomeContainer/userHomeContainer';
+import Editor from './components/editor/editor';
+import UserLogin from './components/userLogin/userLogin';
+import UserSignUp from './components/userSignUp/userSignUp';
+import Navbar from './components/navbar/navbar';
 import UserSignUpSuccess from './components/userSignUpSuccess/userSignUpSuccess';
 import PageNotFound from './components/pageNotFound/pageNotFound';
 import { fakeAuth } from './constants/fakeAuth';

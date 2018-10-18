@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 import UserHome from '../../components/userHome/userHome';
-import { getAllUserDesigns } from "../../actions/getAllUserDesignsActionCreator";
+import { getAllUserDesignsAction } from "actions/userDesigns";
 import { fakeAuth } from "../../constants/fakeAuth";
 
 class UserHomeContainer extends Component {
 
   componentDidMount() {
-    this.props.getAllUserDesigns();
+    console.log("Dispatch");
+    
+    this.props.dispatch(getAllUserDesignsAction());
   }
 
   render() { 
@@ -29,12 +30,12 @@ UserHomeContainer.propTypes = {
   allUserDesigns: PropTypes.object
 }
 
-function mapStateToProps( {allUserDesigns, userLoginResult} ) {
-  return { allUserDesigns, userLoginResult };
+const mapStateToProps = state => {
+  console.log("Finally read:");
+  console.log(state);
+  return {
+    allUserDesigns: state.allUserDesigns
+  }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getAllUserDesigns }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserHomeContainer);
+export default connect(mapStateToProps)(UserHomeContainer);

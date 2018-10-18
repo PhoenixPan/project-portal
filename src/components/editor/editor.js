@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import { Field, reduxForm } from 'redux-form'
-
-// import UserDesign from '../components/userDesignCard';
-
 
 export default class Editor extends Component {
   
@@ -26,13 +20,3 @@ export default class Editor extends Component {
       )
     }
   }
-  
-  // function mapDispatchToProps(dispatch) {
-  //   return bindActionCreators(null, dispatch);
-  // }
-  
-  // function mapStateToProps( {allUserDesigns} ) {
-  //   return { allUserDesigns };
-  // }
-  
-  // export default connect(mapStateToProps, mapDispatchToProps)(Editor);

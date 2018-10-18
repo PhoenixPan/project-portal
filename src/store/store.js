@@ -1,9 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga'
 import ReduxPromise from 'redux-promise';
 import thunk from 'redux-thunk';
 
 import reducers from '../reducers/index';
+import appSagas from '../sagas/sagas';
 
-const store = createStore(reducers, applyMiddleware(ReduxPromise, thunk));
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducers, applyMiddleware(ReduxPromise, thunk, sagaMiddleware));
+sagaMiddleware.run(appSagas);
 
 export default store;
