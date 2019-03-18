@@ -1,4 +1,4 @@
-import { GET_ALL_USER_DESIGNS_SUCCESS } from 'constants/actionTypes';
+import { GET_ALL_USER_DESIGNS_SUCCESS } from "sagas/ducks/user-design";
 
 const allUserDesignReducer = (state = {}, action) => {
     switch (action.type) {
@@ -7,6 +7,6 @@ const allUserDesignReducer = (state = {}, action) => {
         default:
             return null;
     }
-}
+};
 
 export default allUserDesignReducer;

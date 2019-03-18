@@ -1,9 +1,8 @@
-import { all, takeLatest } from 'redux-saga/effects';
-import { GET_ALL_USER_DESIGNS } from 'constants/actionTypes';
-import { handleGetAllUserDesigns } from 'sagas/basic/basic';
+import { all } from "redux-saga/effects";
+import { sagas as userDesignSagas } from "sagas/ducks/user-design";
 
 function* appSagas() {
-    yield all([takeLatest(GET_ALL_USER_DESIGNS, handleGetAllUserDesigns)]);
+    yield all([...userDesignSagas]);
 }
 
 export default appSagas;

@@ -1,41 +1,36 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
-import UserHome from '../../components/userHome/userHome';
-import { getAllUserDesignsAction } from "actions/userDesigns";
-import { fakeAuth } from "../../constants/fakeAuth";
+import UserHome from "components/userHome/userHome";
+import { getAllUserDesigns } from "sagas/ducks/user-design";
+import { fakeAuth } from "constants/fakeAuth";
 
 class UserHomeContainer extends Component {
+    componentDidMount() {
+        console.log("Dispatch");
 
-  componentDidMount() {
-    console.log("Dispatch");
-    
-    this.props.dispatch(getAllUserDesignsAction());
-  }
+        this.props.dispatch(getAllUserDesigns());
+    }
 
-  render() { 
+    render() {
+        if (!fakeAuth.isAuthenticated) return <Redirect to="/login" />;
 
-    if (!fakeAuth.isAuthenticated)
-      return <Redirect to="/login" />
-
-    return (
-      <UserHome allUserDesigns={this.props.allUserDesigns}/>
-    )
-  }
+        return <UserHome allUserDesigns={this.props.allUserDesigns} />;
+    }
 }
 
 UserHomeContainer.propTypes = {
-  allUserDesigns: PropTypes.object
-}
+    allUserDesigns: PropTypes.object
+};
 
 const mapStateToProps = state => {
-  console.log("Finally read:");
-  console.log(state);
-  return {
-    allUserDesigns: state.allUserDesigns
-  }
-}
+    console.log("Finally read:");
+    console.log(state);
+    return {
+        allUserDesigns: state.allUserDesigns
+    };
+};
 
 export default connect(mapStateToProps)(UserHomeContainer);
