@@ -32,6 +32,15 @@ export function* handleGetAllUserDesigns(action) {
     return yield put(getAllUserDesignsSuccessAction(designsJson));
 }
 
+export const allUserDesignReducer = (state = {}, action) => {
+    switch (action.type) {
+        case GET_ALL_USER_DESIGNS_SUCCESS:
+            return action.allUserDesigns;
+        default:
+            return null;
+    }
+};
+
 export const sagas = [
     takeLatest(GET_ALL_USER_DESIGNS, handleGetAllUserDesigns)
 ];

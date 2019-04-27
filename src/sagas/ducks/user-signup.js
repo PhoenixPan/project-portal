@@ -11,13 +11,19 @@ export const userSignUpData = (data, status) => ({
 });
 
 export function userSignUp(user, redirect) {
-    return dispatch => {
-        dispatch(userSignUpData(user, "pending"));
+    //TODO
+}
 
-        const request = axios.post(DUMMY_SIGNUP_URL, user);
-        return request.then(res => {
-            dispatch(userSignUpData(res, "success"));
-            redirect();
-        });
-    };
+export const userSignUpReducer = (state = {}, action) => {
+    switch (action.type) {
+        case USER_SIGNUP:
+            if (action.status === "success") {
+                return { ...state, ...action };
+            } else if (action.status === "pending") {
+                return { ...state, ...action };
+            }
+            break;
+        default:
+            return state;
+    }
 }

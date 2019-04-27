@@ -21,15 +21,12 @@ class UserSignUp extends Component {
     }
 
     onSignUp(formValues) {
-        this.props.userSignUp(formValues, () => {
-            this.props.history.push("/signup/success");
-        });
+        //TODO
     }
 
     render() {
         const { handleSubmit } = this.props;
 
-        console.log("Render:");
         if (
             this.props.userSignUpResult &&
             this.props.userSignUpResult.status === "pending"
@@ -86,16 +83,11 @@ function mapStateToProps({ userSignUpResult }) {
     return { userSignUpResult };
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ userSignUp }, dispatch);
-}
-
 export default reduxForm({
     validate: validate,
     form: "UserSignUpForm"
 })(
     connect(
-        mapStateToProps,
-        mapDispatchToProps
+        mapStateToProps
     )(UserSignUp)
 );
