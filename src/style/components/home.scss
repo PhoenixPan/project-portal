@@ -1,0 +1,31 @@
+.home-container {
+    background-size: cover;
+    height: calc(100vh - 60px);
+    /*max-width: 100%;*/
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    width: 100%;
+
+    .particles-canvas {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    .construction-container {
+        width: 100%;
+        max-width: 666px;
+        text-align: center;
+        margin: 50px auto;
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            color: #ef9e64;
+            font-weight: $font-weight-bold;
+        }
+    }
+}

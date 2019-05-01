@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 import UserHome from "components/userHome/userHome";
 import { getAllUserDesigns } from "sagas/ducks/user-design";
-import { fakeAuth } from "constants/fakeAuth";
 
 class UserHomeContainer extends Component {
     componentDidMount() {
-        console.log("Dispatch");
-
         this.props.dispatch(getAllUserDesigns());
     }
 
     render() {
-        if (!fakeAuth.isAuthenticated) return <Redirect to="/login" />;
-
         return <UserHome allUserDesigns={this.props.allUserDesigns} />;
     }
 }
