@@ -44,5 +44,7 @@ ul {
 .particles-canvas {
     z-index: 0;
     position: absolute;
+    left: 0;
+    right: 0;
     height: calc(100vh - 64px);
 }
