@@ -1,7 +1,7 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 
 import { httpGet } from "services/common/api-service";
-import { DUMMY_POSTS_URL } from "constants/config";
+// import { DUMMY_POSTS_URL } from "config";
 
 export const GET_ALL_USER_DESIGNS = "GET_ALL_USER_DESIGNS";
 export const GET_ALL_USER_DESIGNS_SUCCESS = "GET_ALL_USER_DESIGNS_SUCCESS";
@@ -16,7 +16,7 @@ export const getAllUserDesignsSuccessAction = allUserDesigns => ({
 });
 
 export function* handleGetAllUserDesigns(action) {
-    const response = yield call(httpGet, DUMMY_POSTS_URL);
+    const response = yield call(httpGet, "DUMMY_POSTS_URL");
     if (!response || response.error) {
         // to be handled
     }
@@ -27,7 +27,6 @@ export function* handleGetAllUserDesigns(action) {
             designsJson[designObjectsArray[key].id] = designObjectsArray[key];
         }
     }
-    console.log(designsJson);
 
     return yield put(getAllUserDesignsSuccessAction(designsJson));
 }

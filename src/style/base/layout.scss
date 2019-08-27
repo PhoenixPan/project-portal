@@ -23,7 +23,6 @@ html {
 }
 
 body {
-    position: relative;
     min-height: 100%;
 }
 
@@ -42,7 +41,7 @@ ul {
 }
 
 .particles-canvas {
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     left: 0;
     right: 0;
