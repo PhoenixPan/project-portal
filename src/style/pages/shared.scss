@@ -20,14 +20,14 @@
 
 .page-text {
     color: $dark;
-    font-size: $font-size-base;
+    font-size: $font-size-basic;
     font-family: $text-font-family;
     margin: 16px 0px 24px 0px;
 }
 
 .page-description {
     color: $dark;
-    font-size: $font-size-base;
+    font-size: $font-size-basic;
     font-family: $text-font-family;
     text-align: center;
 }
@@ -48,7 +48,7 @@
     }
 
     .page-description {
-        font-size: $font-size-large;
+        font-size: $font-size-basic;
         text-align: left;
     }
 }
