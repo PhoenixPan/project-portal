@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
 import tv from './old-tv.png';
 
-export default class PageNotFound extends Component {
+class PageNotFound extends Component {
     componentDidMount() {
         setTimeout(() => {
-            console.log('To home page');
+            this.props.dispatch(push('/'));
         }, 5000);
     }
 
@@ -21,3 +23,5 @@ export default class PageNotFound extends Component {
         );
     }
 }
+
+export default connect()(PageNotFound);
