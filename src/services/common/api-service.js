@@ -1,6 +1,6 @@
-import axios from "axios";
-import axiosRetry from "axios-retry";
-import isJson from "is-json";
+import axios from 'axios';
+import axiosRetry from 'axios-retry';
+import isJson from 'is-json';
 
 axiosRetry(axios, {
     retries: 1,
@@ -13,7 +13,7 @@ const buildErrorResponse = error => {
     return {
         error: true,
         statusCode: error.response ? error.response.status : -1,
-        statusText: error.response ? error.response.statusText : "",
+        statusText: error.response ? error.response.statusText : '',
         data: error.response
             ? isJson(error.response.data)
                 ? error.response.data

@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Particles height="100%" className="particles-canvas" params={particlesSetting}/>
+                <Particles height="100%" className="particles-canvas" params={particlesSetting} />
                 <div className="home-container">
                     <div className="construction-container">
                         <img src={require(`public/resources/website-construction.svg`)} alt="" />
@@ -13,7 +13,7 @@ class Home extends Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 

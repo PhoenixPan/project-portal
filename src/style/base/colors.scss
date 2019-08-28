@@ -1,53 +1,53 @@
 // Basic
-$white:                                         #FFF;
-$black:                                         #000;
-$transparent:                                   rgba(0, 0, 0, 0);
+$white: #fff;
+$black: #000;
+$transparent: rgba(0, 0, 0, 0);
 
 // Gray scale
-$dark:                                          #262626;
-$gray-dark:                                     #838383;
-$gray:                                          #949494;
-$gray-light:                                    #DBDBDB;
-$gray-lighter:                                  #EDEDED;
-$gray-pale:                                     #F7F7F7;
+$dark: #262626;
+$gray-dark: #838383;
+$gray: #949494;
+$gray-light: #dbdbdb;
+$gray-lighter: #ededed;
+$gray-pale: #f7f7f7;
 
 // Theme
-$main:                                          #0084ff;
-$red-light:                                     #FF685D;
-$orange:                                        #F5972A;
-$orange-dark:                                   #B8701B;
-$orange-pale:                                   #FCE0BF;
-$green:                                         #00C583;
-$green-light:                                   #00D18B;
-$green-dark:                                    #00AF75;
-$green-pale:                                    #E5F9F3;
-$yellow-dark:                                   #AB810A;
-$yellow-pale:                                   #FFEFB4;
+$main: #0084ff;
+$red-light: #ff685d;
+$orange: #f5972a;
+$orange-dark: #b8701b;
+$orange-pale: #fce0bf;
+$green: #00c583;
+$green-light: #00d18b;
+$green-dark: #00af75;
+$green-pale: #e5f9f3;
+$yellow-dark: #ab810a;
+$yellow-pale: #ffefb4;
 
 // Form
-$primary-alert:                                 $red-light;
-$primary-alert-text:                            $white;
+$primary-alert: $red-light;
+$primary-alert-text: $white;
 
-$secondary-alert:                               $orange;
-$secondary-alert-text:                          $dark;
+$secondary-alert: $orange;
+$secondary-alert-text: $dark;
 
-$danger-alert:                                  $red-light;
-$danger-alert-text:                             $white;
+$danger-alert: $red-light;
+$danger-alert-text: $white;
 
-$success-alert:                                 $green-pale;
-$success-alert-text:                            $green-dark;
+$success-alert: $green-pale;
+$success-alert-text: $green-dark;
 
-$warning-alert:                                 $yellow-pale;
-$warning-alert-text:                            $yellow-dark;
+$warning-alert: $yellow-pale;
+$warning-alert-text: $yellow-dark;
 
-$info-alert:                                    $orange-pale;
-$info-alert-text:                               $orange-dark;
+$info-alert: $orange-pale;
+$info-alert-text: $orange-dark;
 
-$disabled:                                      $gray-light;
-$disabled-text:                                 $gray;
+$disabled: $gray-light;
+$disabled-text: $gray;
 
-$input-gray:                                    $gray-dark;
-$placeholder-gray:                              $gray;
+$input-gray: $gray-dark;
+$placeholder-gray: $gray;
 
-$select-background-gray:                        $gray-lighter;
-$select-hover-gray:                             $gray-light;
+$select-background-gray: $gray-lighter;
+$select-hover-gray: $gray-light;

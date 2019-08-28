@@ -1,17 +1,18 @@
 // Default breakpoints for all elements and for media query min-width
-$screen-xs:                                 480px !default;
-$screen-sm:                                 768px !default;
-$screen-md:                                 1024px !default;
+$screen-xs: 480px !default;
+$screen-sm: 768px !default;
+$screen-md: 1024px !default;
 
 // For media query max-width to avoid display errors on the exact point
-$media-max-screen-xs:                                 $screen-xs - 1px !default;
-$media-max-screen-sm:                                 $screen-sm - 1px !default;
-$media-max-screen-md:                                 $screen-md - 1px !default;
+$media-max-screen-xs: $screen-xs - 1px !default;
+$media-max-screen-sm: $screen-sm - 1px !default;
+$media-max-screen-md: $screen-md - 1px !default;
 
 $body-margin: 16px;
 
 // Page layout
-html, body {
+html,
+body {
     background-color: $white;
     width: 100%;
     font-family: $text-font-family;

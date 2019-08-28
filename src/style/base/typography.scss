@@ -2,14 +2,14 @@
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:700,800';
 
 // Font size
-$font-size-large:                               18px !default;
-$font-size-base:                                17px !default;
-$font-size-small:                               16px !default;
-$font-size-h1:                                  36px !default;
-$font-size-h2:                                  30px !default;
-$font-size-h3:                                  28px !default;
-$font-size-h4:                                  22px !default;
-$font-size-h5:                                  18px !default;
+$font-size-large: 18px !default;
+$font-size-base: 17px !default;
+$font-size-small: 16px !default;
+$font-size-h1: 36px !default;
+$font-size-h2: 30px !default;
+$font-size-h3: 28px !default;
+$font-size-h4: 22px !default;
+$font-size-h5: 18px !default;
 
 $font-size-map: (
     large: $font-size-large,
@@ -23,18 +23,18 @@ $font-size-map: (
 );
 
 // Font weight
-$font-weight-regular:                           400;
-$font-weight-bold:                              700;
-$font-weight-extra-bold:                        800;
-$font-weight-black:                             900;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
 
 // Line height
-$base-line-height:                              26px;
-$small-line-height:                             22px;
+$base-line-height: 26px;
+$small-line-height: 22px;
 
 // Font family
-$title-font-family:                             'Montserrat', Arial, Helvetica, sans-serif;
-$text-font-family:                              'Lato', Arial, Helvetica, sans-serif;
+$title-font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+$text-font-family: 'Lato', Arial, Helvetica, sans-serif;
 
 // Mixins
 @mixin title($size) {

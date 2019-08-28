@@ -11,21 +11,20 @@ import Navbar from './components/navbar/navbar';
 import PageNotFound from './components/pageNotFound/pageNotFound';
 import './style/index.css';
 
-
-
 ReactDOM.render(
-  <Provider store={store}>
-    <HashRouter>
-      <div className="router-container">
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/user" component={UserHomeContainer} />
-          <Route path="/error" component={PageNotFound} />
-          <Route path="/signup" component={Signup} />
-          <Route component={Home} />
-        </Switch>
-      </div>
-    </HashRouter>    
-  </Provider>
-  , document.querySelector('.main-container'));
+    <Provider store={store}>
+        <HashRouter>
+            <div className="router-container">
+                <Navbar />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/user" component={UserHomeContainer} />
+                    <Route path="/error" component={PageNotFound} />
+                    <Route path="/signup" component={Signup} />
+                    <Route component={Home} />
+                </Switch>
+            </div>
+        </HashRouter>
+    </Provider>,
+    document.querySelector('.main-container')
+);
