@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
-import particlesSetting from './particles.json';
+import { ParticleEffect } from 'components/particle-effect/particle-effect';
+
 class Home extends Component {
     render() {
         return (
             <div>
-                <Particles height="100%" className="particles-canvas" params={particlesSetting} />
+                <ParticleEffect />
                 <div className="home-container">
                     <div className="construction-container">
                         <img src={require(`public/resources/website-construction.svg`)} alt="" />

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import { TextInput } from 'components/form/text-input';
+import { emailValidator } from 'components/form/field-validators';
 
 class SignupForm extends Component {
     render() {
@@ -10,7 +11,8 @@ class SignupForm extends Component {
         return (
             <form onSubmit={handleSubmit}>
                 <Field name="username" type="text" component={TextInput} label="Username" />
-                <Field name="password" type="password" component={TextInput} label="Password" />
+                <Field name="email" type="text" component={TextInput} label="Email" validate={emailValidator}/>
+                <Field name="password" type="text" component={TextInput} label="Password" />
                 <div>
                     <button type="submit" disabled={pristine || submitting}>
                         Sign Up

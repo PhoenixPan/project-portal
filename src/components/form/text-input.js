@@ -6,7 +6,7 @@ export const TextInput = ({ input, label, type, meta: { asyncValidating, touched
             <label>{label}</label>
             <div className={asyncValidating ? 'async-validating' : ''}>
                 <input {...input} type={type} placeholder={label} />
-                {/* {touched && error && <span>{error}</span>} */}
+                {touched && error && <span>{error}</span>}
             </div>
         </div>
     );

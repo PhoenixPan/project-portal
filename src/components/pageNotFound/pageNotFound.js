@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import tv from './old-tv.png';
 
 export default class PageNotFound extends Component {
+    componentDidMount() {
+        setTimeout(() => {
+            console.log('To home page');
+        }, 5000);
+    }
+
     render() {
         return (
             <div style={{ height: '100%', width: '100%' }} className="page-not-found-container">
