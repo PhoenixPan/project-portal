@@ -14,7 +14,7 @@ class SignupForm extends Component {
                 <Field name="email" type="text" component={TextInput} label="Email" validate={emailValidator}/>
                 <Field name="password" type="text" component={TextInput} label="Password" />
                 <div>
-                    <button type="submit" disabled={pristine || submitting}>
+                    <button class="form-submit-btn" type="submit" disabled={pristine || submitting}>
                         Sign Up
                     </button>
                 </div>
