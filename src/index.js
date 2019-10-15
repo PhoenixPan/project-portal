@@ -11,6 +11,7 @@ import Home from 'components/home/home';
 import Signup from 'components/signup/signup';
 import Navbar from 'components/navbar/navbar';
 import PageNotFound from 'components/pageNotFound/pageNotFound';
+import Demo3DCube from 'components/demo-3d-cube/demo-3d-cube';
 import 'style/index.css';
 
 ReactDOM.render(
@@ -23,6 +24,7 @@ ReactDOM.render(
                     <Route path="/user" component={UserHomeContainer} />
                     <Route path="/error" component={PageNotFound} />
                     <Route path="/signup" component={Signup} />
+                    <Route path="/demo-3d-cube" component={Demo3DCube} />
                     <Route component={PageNotFound} />
                 </Switch>
             </div>

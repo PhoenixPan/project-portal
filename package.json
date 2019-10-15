@@ -19,7 +19,8 @@
         "react-scripts": "^3.1.1",
         "redux": "^4.0.1",
         "redux-form": "^8.2.0",
-        "redux-saga": "^1.0.2"
+        "redux-saga": "^1.0.2",
+        "three": "^0.109.0"
     },
     "scripts": {
         "start": "npm-run-all -p watch-css start-js",
