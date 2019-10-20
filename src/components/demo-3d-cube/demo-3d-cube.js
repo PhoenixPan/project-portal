@@ -6,6 +6,7 @@ class Demo3DCube extends Component {
     componentDidMount() {
         const selectSide = document.getElementById('side');
         const container = document.getElementById('container');
+
         // 设置场景大小
         const WIDTH = 600;
         const HEIGHT = 400;
@@ -18,6 +19,7 @@ class Demo3DCube extends Component {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(VIEW_ANGLE, WIDTH / HEIGHT, NEAR, FAR);
         const renderer = new THREE.WebGLRenderer();
+
         // 根据dpr设置分辨率
         renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -32,7 +34,7 @@ class Demo3DCube extends Component {
         camera.lookAt(0, 0, 0);
 
         // 创建几何体
-        const geometry = new THREE.BoxBufferGeometry(4, 4, 4);
+        const geometry = new THREE.BoxBufferGeometry(2, 4, 2);
         // 创建材质
         const materials = [
             new THREE.MeshLambertMaterial({
@@ -70,8 +72,8 @@ class Demo3DCube extends Component {
         scene.add(line);
 
         // 创建一个点光源
-        const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-        pointLight.position.set(-2, 5, 8);
+        const pointLight = new THREE.PointLight(0xffffff, 1, 100, 2);
+        pointLight.position.set(1, 4, 0);
         // 将点光源加入场景
         scene.add(pointLight);
 
