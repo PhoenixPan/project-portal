@@ -1,6 +1,24 @@
 import React from 'react';
 
-export const TextInput = ({ input, label, type, meta: { asyncValidating, touched, error } }) => {
+interface IProps {
+    input: string;
+    label: string;
+    type: string;
+
+    meta: {
+        asyncValidating: boolean;
+        touched: boolean;
+        error: object;
+    };
+}
+
+export const TextInput: React.FC<IProps> = props => {
+    const {
+        input,
+        label,
+        type,
+        meta: { asyncValidating, touched, error }
+    } = props;
     return (
         <div>
             <label>{label}</label>
