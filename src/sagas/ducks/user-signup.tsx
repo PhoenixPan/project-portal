@@ -25,7 +25,7 @@ function errorUserSignup() {
     };
 }
 
-export function* handleUserSignup(action) {
+export function* handleUserSignup() {
     const response = yield call(httpPost, userSignupLink);
     if (!response || response.error) {
         return yield put(errorUserSignup());

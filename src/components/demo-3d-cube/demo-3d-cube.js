@@ -7,24 +7,23 @@ class Demo3DCube extends Component {
         const selectSide = document.getElementById('side');
         const container = document.getElementById('container');
 
-        // 设置场景大小
+        // scene
         const WIDTH = 600;
         const HEIGHT = 400;
-        // 相机参数
+
+        // camera
         const VIEW_ANGLE = 45;
         const NEAR = 0.1;
         const FAR = 100;
 
-        // 创建渲染器、相机和场景
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(VIEW_ANGLE, WIDTH / HEIGHT, NEAR, FAR);
         const renderer = new THREE.WebGLRenderer();
 
-        // 根据dpr设置分辨率
+        // set resolution based on dpr
         renderer.setPixelRatio(window.devicePixelRatio);
 
         scene.background = new THREE.Color('hsl(0, 0%, 95%)');
-        // 将相机加入场景
         scene.add(camera);
         scene.add(new THREE.AmbientLight(0x606060));
 
@@ -33,9 +32,10 @@ class Demo3DCube extends Component {
         camera.translateZ(8);
         camera.lookAt(0, 0, 0);
 
-        // 创建几何体
+        // create geometry
         const geometry = new THREE.BoxBufferGeometry(2, 4, 2);
-        // 创建材质
+
+        // create materials
         const materials = [
             new THREE.MeshLambertMaterial({
                 map: new THREE.CanvasTexture(getTextCanvas('Right'))
@@ -58,18 +58,17 @@ class Demo3DCube extends Component {
         ];
         const cube = new THREE.Mesh(geometry, materials);
         scene.add(cube);
-        // 突出Geometry的边缘 的边缘几何体
+
+        // geometry edge
         var edges = new THREE.EdgesGeometry(geometry);
-        var line = new THREE.LineSegments(
-            edges,
-            new THREE.LineBasicMaterial({
-                color: 0xbbbbbb,
-                linewidth: 10,
-                linecap: 'round',
-                linejoin: 'round'
-            })
-        );
-        scene.add(line);
+        var edgesMaterial = new THREE.LineBasicMaterial({
+            color: 0xbbbbbb,
+            linewidth: 10,
+            linecap: 'round',
+            linejoin: 'round'
+        });
+        var edgesMesh = new THREE.LineSegments(edges, edgesMaterial);
+        scene.add(edgesMesh);
 
         // 创建一个点光源
         const pointLight = new THREE.PointLight(0xffffff, 1, 100, 2);
@@ -126,8 +125,8 @@ class Demo3DCube extends Component {
             (function animate() {
                 const t = new Date() - st;
                 if (t > duration) return;
-                cube.rotation.x = line.rotation.x = easeInOut(t, sx, dx - sx, duration);
-                cube.rotation.y = line.rotation.y = easeInOut(t, sy, dy - sy, duration);
+                cube.rotation.x = edgesMesh.rotation.x = easeInOut(t, sx, dx - sx, duration);
+                cube.rotation.y = edgesMesh.rotation.y = easeInOut(t, sy, dy - sy, duration);
                 render();
                 requestAnimationFrame(animate);
             })();
