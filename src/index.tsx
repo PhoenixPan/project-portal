@@ -9,7 +9,7 @@ import history from 'store/history';
 import Home from 'components/home/home';
 import Signup from 'components/signup/signup';
 import Navbar from 'components/navbar/navbar';
-import PageNotFound from 'components/pageNotFound/pageNotFound';
+import PageNotFound from 'components/page-not-found/page-not-found';
 import Demo3DCube from 'components/demo-3d-cube/demo-3d-cube';
 import 'style/index.css';
 
