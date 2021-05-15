@@ -1,6 +1,6 @@
-import React from 'react';
 import { ParticleEffect } from 'components/particle-effect/particle-effect';
 import ConstructionImage from 'public/resources/website-construction.svg';
+import './home.scss';
 
 export const Home = () => {
     return (
