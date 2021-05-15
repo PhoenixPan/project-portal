@@ -13,13 +13,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
     "resolveJsonModule": true,
-    "strict": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": true
   },
   "include": [
     "src"
