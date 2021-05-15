@@ -1,7 +1,9 @@
-import { all } from 'redux-saga/effects';
+// import { all } from 'redux-saga/effects';
 
-function* appSagas() {
-    yield all([]);
-}
+// function* appSagas() {
+//     yield all([]);
+// }
 
-export default appSagas;
+// export default appSagas;
+
+export { }
