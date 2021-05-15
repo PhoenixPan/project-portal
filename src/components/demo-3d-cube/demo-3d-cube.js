@@ -132,7 +132,7 @@ class Demo3DCube extends Component {
             })();
         }
 
-        selectSide.onchange = function(e) {
+        selectSide.onchange = function (e) {
             const val = this.value;
             switch (parseInt(val, 10)) {
                 case 0:
@@ -161,8 +161,8 @@ class Demo3DCube extends Component {
 
     render() {
         return (
-            <div class="demo-container">
-                <label for="side">select side: &nbsp;</label>
+            <div className="demo-container">
+                <label htmlFor="side">select side: &nbsp;</label>
                 <select id="side">
                     <option value="0">front</option>
                     <option value="1">left</option>

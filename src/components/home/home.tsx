@@ -1,5 +1,6 @@
 import React from 'react';
 import { ParticleEffect } from 'components/particle-effect/particle-effect';
+import ConstructionImage from 'public/resources/website-construction.svg';
 
 export const Home = () => {
     return (
@@ -7,7 +8,7 @@ export const Home = () => {
             <ParticleEffect />
             <div className="home-container">
                 <div className="construction-container">
-                    <img src={require(`public/resources/website-construction.svg`)} alt="" />
+                    <img src={ConstructionImage} alt="" />
                     <h1>Under construction</h1>
                 </div>
             </div>
