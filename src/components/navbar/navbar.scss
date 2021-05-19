@@ -5,8 +5,11 @@
 .navbar {
     @include flex;
 
+    position: fixed;
+    z-index: 2;
     flex-wrap: nowrap;
     height: 60px;
+    width: 100%;
     margin: 0;
     padding: 8px 16px;
     border: none;
@@ -22,6 +25,7 @@
     .navbar-toggler {
         cursor: pointer;
         outline: 0;
+        justify-content: flex-end;
 
         @media screen and (min-width: $screen-sm) {
             display: none;
@@ -52,7 +56,6 @@
             position: absolute;
             top: 60px;
             right: 0;
-            z-index: 2;
             flex-direction: column;
 
             &.active {
