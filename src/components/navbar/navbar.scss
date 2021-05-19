@@ -1,5 +1,6 @@
 @import 'style/mixins.scss';
 @import 'style/colors.scss';
+@import 'style/layout.scss';
 
 .navbar {
     @include flex;
@@ -9,7 +10,6 @@
     margin: 0;
     padding: 8px 16px;
     border: none;
-    box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
 
     .navbar-brand {
         color: $main;
@@ -19,10 +19,55 @@
         }
     }
 
+    .navbar-toggler {
+        cursor: pointer;
+        outline: 0;
+
+        @media screen and (min-width: $screen-sm) {
+            display: none;
+        }
+
+        .line {
+            transition: width 0.3s;
+            background: $main;
+            width: 28px;
+            height: 2px;
+            margin: 6px;
+            transition: 0.4s;
+        }
+    }
+
+    .active .line1 {
+        transform: rotate(-45deg) translate(-3px, 2px);
+    }
+
+    .active .line2 {
+        transform: rotate(45deg) translate(-3px, -2px);
+    }
+
     .navbar-collapse {
+        display: flex;
+
+        @media screen and (max-width: $media-max-screen-sm) {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            z-index: 2;
+            flex-direction: column;
+
+            &.active {
+                display: none;
+            }
+        }
+
         .nav-link {
             display: inline-block;
             color: $main;
+            user-select: none;
+
+            @media screen and (max-width: $media-max-screen-sm) {
+                margin-right: 20px;
+            }
         }
     }
 }

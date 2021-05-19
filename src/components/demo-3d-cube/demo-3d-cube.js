@@ -38,23 +38,23 @@ class Demo3DCube extends Component {
         // create materials
         const materials = [
             new THREE.MeshLambertMaterial({
-                map: new THREE.CanvasTexture(getTextCanvas('Right'))
+                map: new THREE.CanvasTexture(getTextCanvas('Right')),
             }),
             new THREE.MeshLambertMaterial({
-                map: new THREE.CanvasTexture(getTextCanvas('Left'))
+                map: new THREE.CanvasTexture(getTextCanvas('Left')),
             }),
             new THREE.MeshLambertMaterial({
-                map: new THREE.CanvasTexture(getTextCanvas('Top'))
+                map: new THREE.CanvasTexture(getTextCanvas('Top')),
             }),
             new THREE.MeshLambertMaterial({
-                map: new THREE.CanvasTexture(getTextCanvas('Bottom'))
+                map: new THREE.CanvasTexture(getTextCanvas('Bottom')),
             }),
             new THREE.MeshLambertMaterial({
-                map: new THREE.CanvasTexture(getTextCanvas('Front'))
+                map: new THREE.CanvasTexture(getTextCanvas('Front')),
             }),
             new THREE.MeshLambertMaterial({
-                map: new THREE.CanvasTexture(getTextCanvas('Back'))
-            })
+                map: new THREE.CanvasTexture(getTextCanvas('Back')),
+            }),
         ];
         const cube = new THREE.Mesh(geometry, materials);
         scene.add(cube);
@@ -65,7 +65,7 @@ class Demo3DCube extends Component {
             color: 0xbbbbbb,
             linewidth: 10,
             linecap: 'round',
-            linejoin: 'round'
+            linejoin: 'round',
         });
         var edgesMesh = new THREE.LineSegments(edges, edgesMaterial);
         scene.add(edgesMesh);
