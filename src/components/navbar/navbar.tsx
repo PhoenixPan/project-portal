@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import PortalSvg from 'public/resources/portal.svg';
 import './navbar.scss';
 
 export const Navbar = () => {
@@ -8,8 +9,8 @@ export const Navbar = () => {
     return (
         <div>
             <nav className="navbar">
+                <img className="navbar-brand-img" src={PortalSvg} alt="" />
                 <Link className="navbar-brand" to="/">
-                    <img src={require(`public/resources/portal.svg`)} alt="" />
                     Project Portal
                 </Link>
                 <button className={`navbar-toggler nav-button ${navbarActive ? "active" : ""}`} type="button" onClick={() => setNavbarActive(!navbarActive)}>
