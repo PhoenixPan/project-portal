@@ -1,6 +1,7 @@
 @import 'style/mixins.scss';
 @import 'style/colors.scss';
 @import 'style/layout.scss';
+@import 'style/typography.scss';
 
 .navbar {
     @include flex;
@@ -13,12 +14,15 @@
     padding: 8px 0;
     border: none;
     align-items: center;
+    user-select: none;
 
     .navbar-brand {
+        margin-left: 16px;
+        text-decoration: none;
         color: $white;
         font-size: 24px;
-        text-decoration: none;
-        margin-left: 16px;
+        font-family: $title-font-family;
+
         img {
             height: 44px;
         }
@@ -67,6 +71,8 @@
             top: 60px;
             right: 0;
             flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
 
             &.active {
                 display: none;
@@ -75,12 +81,18 @@
 
         .nav-item {
             color: $white;
-            user-select: none;
             text-decoration: none;
-            padding: 0 8px;
+            padding: 0 12px;
 
             @media screen and (max-width: $media-max-screen-sm) {
-                margin-right: 20px;
+                padding: 16px 24px 16px 12px;
+
+                &:hover {
+                }
+            }
+
+            &:not(:last-child) {
+                border-bottom: 2px #072143 solid;
             }
         }
     }
