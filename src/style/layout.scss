@@ -11,12 +11,9 @@ $media-max-screen-xs: $screen-xs - 1px !default;
 $media-max-screen-sm: $screen-sm - 1px !default;
 $media-max-screen-md: $screen-md - 1px !default;
 
-$body-margin: 16px;
-
 // Page layout
 html,
 body {
-    background-color: $white;
     width: 100%;
     font-family: $text-font-family;
     font-size: $font-size-basic;
@@ -32,16 +29,6 @@ body {
 
 ul {
     margin: 0;
-}
-
-.hidden {
-    display: none;
-}
-
-@media screen and (max-width: $media-max-screen-sm) {
-    .center-mobile {
-        text-align: center;
-    }
 }
 
 .particles-canvas {

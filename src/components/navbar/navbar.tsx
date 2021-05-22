@@ -17,10 +17,10 @@ export const Navbar = () => {
                     <div className="line2 line"></div>
                 </button>
                 <div className={`navbar-collapse ${navbarActive ? "" : "active"}`}>
-                    <Link className="nav-link" to="/signup">
+                    <Link className="nav-item" to="/signup">
                         Sign up
                     </Link>
-                    <Link className="nav-link" to="/demo">
+                    <Link className="nav-item" to="/demo">
                         Demo
                     </Link>
                 </div>
