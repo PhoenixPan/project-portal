@@ -6,6 +6,7 @@ export const createCamera = (scene?: Scene) => {
     if (scene) {
         camera.lookAt(scene.position);
         // camera.lookAt(new THREE.Vector3(0, 0, 0)); // same as above?
+        scene.add(camera);
     }
 
     return camera;
