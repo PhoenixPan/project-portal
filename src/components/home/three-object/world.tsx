@@ -1,36 +1,36 @@
 import { useEffect } from 'react';
+
 import { createScene } from './components/scene';
 import { createCamera } from './components/camera';
 import { createDirectionalLight } from './components/directionalLight';
-import { createTestCube } from './components/test-cube';
+import { createCube } from './components/cube';
 import { createRenderer } from './systems/renderer';
 import { createGLTFLoader } from './systems/GLTFLoader';
+import { resize } from './systems/Resizer';
+import throttle from 'lodash/throttle'
 
 export const World = () => {
-
     useEffect(() => {
         const container = document.querySelector('#world-container');
+        if (container) container.innerHTML = "";
+
         var scene = createScene();
         var camera = createCamera(scene);
 
-        createDirectionalLight(scene);
-        createTestCube(scene);
+        var light = createDirectionalLight();
+        var cube = createCube();
+        scene.add(light, cube);
 
         const loader = createGLTFLoader();
         loader.load("./LittlestTokyo.glb", (gltf) => {
-            // var obj = gltf.scene.children[0];
-            // console.log(obj);
             var model = gltf.scene;
             model.position.set(1, 1, 0);
-            model.scale.set(0.03, 0.03, 0.03);
+            model.scale.set(0.02, 0.02, 0.02);
             scene.add(model);
             animate();
         });
 
         // loader.load("./Flamingo.glb", (gltf) => {
-        //     var obj = gltf.scene.children[0];
-        //     console.log(obj);
-
         //     var model = gltf.scene;
         //     model.position.set(0, 0, 0);
         //     model.scale.set(0.1, 0.1, 0.1);
@@ -46,6 +46,7 @@ export const World = () => {
             renderer.render(scene, camera);
         }
 
+        window.addEventListener('resize', throttle((e: Event) => { resize(container, camera, renderer); }, 200));
         // Orbit control
         // let controls = new OrbitControls(camera, renderer.domElement);
         // // controls.target.set(0, 0.5, 0);
