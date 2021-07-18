@@ -17,12 +17,14 @@ export const World = () => {
         var scene = createScene();
         var camera = createCamera(scene);
 
+
         var light = createDirectionalLight();
         var cube = createCube();
         scene.add(light, cube);
 
         const loader = createGLTFLoader();
-        loader.load("./LittlestTokyo.glb", (gltf) => {
+
+        loader.load('./LittlestTokyo.glb', (gltf) => {
             var model = gltf.scene;
             model.position.set(1, 1, 0);
             model.scale.set(0.02, 0.02, 0.02);
@@ -30,13 +32,13 @@ export const World = () => {
             animate();
         });
 
-        // loader.load("./Flamingo.glb", (gltf) => {
-        //     var model = gltf.scene;
-        //     model.position.set(0, 0, 0);
-        //     model.scale.set(0.1, 0.1, 0.1);
-        //     scene.add(model);
-        //     animate();
-        // });
+        loader.load('./Flamingo.glb', (gltf) => {
+            var model = gltf.scene;
+            model.position.set(0, 0, 0);
+            model.scale.set(0.1, 0.1, 0.1);
+            scene.add(model);
+            animate();
+        });
 
         var renderer = createRenderer(container);
         renderer.render(scene, camera);
@@ -44,9 +46,15 @@ export const World = () => {
         const animate = () => {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
-        }
+        };
 
-        window.addEventListener('resize', throttle((e: Event) => { resize(container, camera, renderer); }, 200));
+        window.addEventListener(
+            'resize',
+            throttle((e: Event) => {
+                resize(container, camera, renderer);
+            }, 200)
+        );
+
         // Orbit control
         // let controls = new OrbitControls(camera, renderer.domElement);
         // // controls.target.set(0, 0.5, 0);
